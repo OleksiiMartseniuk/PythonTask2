@@ -8,5 +8,16 @@ def check_password(password: str) -> None | str:
     return password if mat else None
 
 
+def main():
+    password_data = input('Enter password: ')
+    list_password_true = []
+    for password in password_data.split(','):
+        result = check_password(password)
+        if result:
+            list_password_true.append(result)
+
+    print(','.join(list_password_true))
+
+
 if __name__ == '__main__':
-    pass
+    main()
